@@ -15,6 +15,7 @@ export default function App() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [hasSigned, setHasSigned] = useState(false);
 
+
   useEffect(() => {
     fetchSignatures();
   }, []);
@@ -109,7 +110,7 @@ export default function App() {
             </div>
           </section>
 
-          <motion.section 
+          <motion.section
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -161,15 +162,15 @@ export default function App() {
         <section className="mt-60 pt-40 border-t border-black/10 grid grid-cols-1 md:grid-cols-12 gap-24">
           <div className="md:col-span-7 space-y-16">
             <h2 className="text-4xl font-display uppercase tracking-tight">Join the Resistance</h2>
-            
+
             <AnimatePresence mode="wait">
               {!hasSigned ? (
-                <motion.form 
+                <motion.form
                   key="form"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0 }}
-                  onSubmit={handleSubmit} 
+                  onSubmit={handleSubmit}
                   className="space-y-12"
                 >
                   <div className="space-y-8">
@@ -193,7 +194,7 @@ export default function App() {
                       />
                     </div>
                   </div>
-                  
+
                   <button
                     type="submit"
                     disabled={isSubmitting}
@@ -204,7 +205,7 @@ export default function App() {
                   </button>
                 </motion.form>
               ) : (
-                <motion.div 
+                <motion.div
                   key="success"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
@@ -241,9 +242,9 @@ export default function App() {
               Be present.
             </p>
           </div>
-          
+
           <div className="flex flex-col items-center gap-8">
-            <button 
+            <button
               onClick={() => {
                 if (navigator.share) {
                   navigator.share({
