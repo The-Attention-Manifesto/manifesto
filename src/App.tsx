@@ -36,7 +36,7 @@ export default function App() {
 
     setIsSubmitting(true);
     try {
-      const res = await fetch('/api/signatures', {
+      const res = await fetch('https://us-central1-the-attention-manifesto.cloudfunctions.net/addSignature', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ name, location }),
