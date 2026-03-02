@@ -22,9 +22,9 @@ export default function App() {
 
   const fetchSignatures = async () => {
     try {
-      const res = await fetch('/api/signatures');
+      const res = await fetch('https://us-central1-the-attention-manifesto.cloudfunctions.net/getSignaturesStats');
       const data = await res.json();
-      setSignatures(data);
+      setSignatures(data.last5);
     } catch (err) {
       console.error('Failed to fetch signatures', err);
     }
